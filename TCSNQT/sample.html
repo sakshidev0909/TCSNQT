@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img id="imageToRotate" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6WwgH7Nl5_AW9nDCnR2Ozb_AU3rkIbSJdAg&s" />
+<button id="rotateLeft" onclick="rotateLeft()">Rotate Left</button>
+<button id="rotateRight" onclick="rotateRight()">Rotate Right</button>
+<button id="resetButton" onclick="resetRotation()">Reset</button>
+
+<script>
+let currentAngle = 0; // Keeps track of the current rotation angle
+
+function rotateLeft() {
+  const image = document.getElementById("imageToRotate");
+  currentAngle = (currentAngle - 90) % 360;
+  image.style.transform = `rotate(${currentAngle}deg)`;
+}
+
+function rotateRight() {
+  const image = document.getElementById("imageToRotate");
+  currentAngle = (currentAngle + 90) % 360;
+  image.style.transform = `rotate(${currentAngle}deg)`;
+}
+
+function resetRotation() {
+  const image = document.getElementById("imageToRotate");
+  currentAngle = 0; // Set back to 0 degrees for original orientation
+  image.style.transform = `rotate(${currentAngle}deg)`;
+}
+</script>
+
+  </body>
+</html>
